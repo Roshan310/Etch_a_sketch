@@ -1,0 +1,1 @@
+# A simple JS project that lets you draw in a grid with your mouse
