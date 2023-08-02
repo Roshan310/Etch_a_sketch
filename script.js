@@ -1,4 +1,5 @@
 const parentContainer = document.getElementById('container');
+
 let mouseClicked = false;
 window.addEventListener('mousedown', (e) => {
     mouseClicked = true;
@@ -8,20 +9,19 @@ window.addEventListener('mouseup', () => {
     mouseClicked = false
 })
 
-const grid_size = 100;
+const grid_size = 10;
 
-for(let i=0; i<grid_size; i++) {
-    const divs = document.createElement('div');
+for(let i=0; i<grid_size * grid_size; i++) {
+    let divs = document.createElement('div');
+    divs.style.width = (600/grid_size) + 'px';
+    divs.style.height = (600/grid_size) + 'px';
     parentContainer.appendChild(divs);
     divs.classList.add('newdiv');
-    for(let j=0; j<grid_size; j++) {
-        const grandChildDivs = document.createElement('div');
-        divs.appendChild(grandChildDivs);
-        grandChildDivs.classList.add('grandchild-div');
-    }
+
+
 }
 
-const div = document.querySelectorAll('#container .newdiv .grandchild-div');
+const div = document.querySelectorAll('#container .newdiv');
 
 function color() {
     this.style.backgroundColor = 'yellow';
@@ -39,7 +39,6 @@ div.forEach(alldiv => {
         //     alldiv.removeEventListener('mousemove', color);
 
         // })
-
 })
 
 
