@@ -9,36 +9,43 @@ window.addEventListener('mouseup', () => {
     mouseClicked = false
 })
 
-const grid_size = 10;
+const gridSize = document.getElementById('grid-size');
+let defaultGridSize = 16;
 
-for(let i=0; i<grid_size * grid_size; i++) {
-    let divs = document.createElement('div');
-    divs.style.width = (600/grid_size) + 'px';
-    divs.style.height = (600/grid_size) + 'px';
-    parentContainer.appendChild(divs);
-    divs.classList.add('newdiv');
+gridSize.addEventListener('click', () => {
+    defaultGridSize = Number(prompt("Enter grid size (2 to 100): "));
+    removeNode(parentContainer);
+    addNode(parentContainer)
+  
+})
 
 
+
+function removeNode(parent) {
+    while(parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
 }
 
-const div = document.querySelectorAll('#container .newdiv');
-
-function color() {
-    this.style.backgroundColor = 'yellow';
+function addNode(parentNode) {
+    for(let i=0; i<defaultGridSize * defaultGridSize; i++) {
+        let divs = document.createElement('div');
+        divs.classList.add('newdiv');
+        divs.style.width = (600/defaultGridSize) + 'px';
+        divs.style.height = (600/defaultGridSize) + 'px';
+        parentNode.appendChild(divs);
 }
+}
+addNode(parentContainer)
 
-div.forEach(alldiv => {
+const divBox = document.querySelector('#container');
 
-        alldiv.addEventListener('mousemove', () => {
-            if(mouseClicked) {
-                alldiv.addEventListener('mousemove', color);
-            }
-        })
 
-        // alldiv.addEventListener('mouseup', () => {
-        //     alldiv.removeEventListener('mousemove', color);
+divBox.addEventListener('mousemove', () => {
+    if(mouseClicked) {
+        e.target.style.backgroundColor = 'yellow';
 
-        // })
+    }
 })
 
 
