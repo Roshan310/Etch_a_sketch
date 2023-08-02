@@ -2,25 +2,21 @@
     margin: 0;
     box-sizing: border-box;
 }
+body {
+    height: 100vh;
+    background-color: aqua;
+}
 
 .container {
     display: flex;
-    flex-direction: column;
-    width: 900px;
-    height: 100%;
-    border: 3px solid blue;
-    margin: 20px;
+    flex-wrap: wrap;
+    max-width: 600px;
+    /* border: 3px solid blue;
+    margin: 20px; */
+    background-color: white;
 }
 
-.newdiv {
-    display: flex;
-    background-color: red;
-    width: 100%;
-    flex: 1;
-    /* height: 50px; */
-}
-
-.grandchild-div {
-    width: 50px;
-    height: 30px;
-}
+/* .grandchild-div {
+    width: 30px;    
+    height: 10px;
+} */
