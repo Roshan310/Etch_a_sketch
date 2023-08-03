@@ -1,4 +1,4 @@
-const parentContainer = document.getElementById('container');
+const container = document.getElementById('container');
 
 let mouseClicked = false;
 window.addEventListener('mousedown', (e) => {
@@ -14,12 +14,10 @@ let defaultGridSize = 16;
 
 gridSize.addEventListener('click', () => {
     defaultGridSize = Number(prompt("Enter grid size (2 to 100): "));
-    removeNode(parentContainer);
-    addNode(parentContainer)
+    removeNode(container);
+    addNode(container)
   
 })
-
-
 
 function removeNode(parent) {
     while(parent.firstChild) {
@@ -36,15 +34,12 @@ function addNode(parentNode) {
         parentNode.appendChild(divs);
 }
 }
-addNode(parentContainer)
 
-const divBox = document.querySelector('#container');
+addNode(container)
 
-
-divBox.addEventListener('mousemove', (e) => {
+container.addEventListener('mousemove', (e) => {
     if (mouseClicked) {
         e.target.style.backgroundColor = 'yellow';  
-        console.log(e.target) 
     }
 })
 
