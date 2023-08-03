@@ -41,10 +41,10 @@ addNode(parentContainer)
 const divBox = document.querySelector('#container');
 
 
-divBox.addEventListener('mousemove', () => {
-    if(mouseClicked) {
-        e.target.style.backgroundColor = 'yellow';
-
+divBox.addEventListener('mousemove', (e) => {
+    if (mouseClicked) {
+        e.target.style.backgroundColor = 'yellow';  
+        console.log(e.target) 
     }
 })
 
