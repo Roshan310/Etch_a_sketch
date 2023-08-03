@@ -53,15 +53,3 @@ button {
     cursor: pointer;
     border-radius: 8px;
 }
-
-.red {
-    background-color: red;
-}
-
-.yellow {
-    background-color: rgb(169, 169, 32);
-}
-
-.blue {
-    background-color: blue;
-}
